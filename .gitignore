@@ -1,4 +1,5 @@
 *.iml
+app/libs/android_sync_sdk_*
 .idea/
 .gradle
 /local.properties
