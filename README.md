@@ -26,7 +26,7 @@ These store events in local database till they are synced to our server.
 
 __Version__
 
-VERSION :: `1.0.0`
+VERSION :: `1.0.1`
 
 __Download lib__
 
@@ -75,5 +75,5 @@ smClient.release();
 
 ### Contributors
 
-* Pankaj Soni <pankajsoni19@live.com>
+* Pankaj Soni <pankajsoni@syncmedia.io>
 
