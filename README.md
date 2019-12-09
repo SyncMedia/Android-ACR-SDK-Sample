@@ -26,7 +26,7 @@ These store events in local database till they are synced to our server.
 
 __Version__
 
-VERSION :: `1.0.1`
+VERSION :: `1.0.3`
 
 __Download lib__
 
@@ -35,11 +35,19 @@ __Download lib__
 wget https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_$VERSION.aar
 ```
 
-Add `android_sync_sdk_$VERSION.aar` to `libs` folder
+Add `android_sync_sdk_$VERSION.aar` as a module `dependency` named: `android_sync_sdk`
+
+Add app dependencies to your main module
 
 ```
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+     //sdk dependencies
+    implementation project(':android_sync_sdk') //sub module
+     
+    implementation 'com.getkeepsafe.relinker:relinker:1.3.1'
+    implementation "androidx.room:room-runtime:2.2.2"
+    annotationProcessor "androidx.room:room-compiler:2.2.2"
+    
 	//... other dependencies
 }
 ```

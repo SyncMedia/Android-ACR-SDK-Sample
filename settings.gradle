@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':android_sync_sdk'
 rootProject.name='Audio Demo'

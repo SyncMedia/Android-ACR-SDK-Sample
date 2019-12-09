@@ -12,6 +12,7 @@ import com.acr.syncmedia.SMClient;
 import com.acr.syncmedia.SMConfig;
 import com.acr.syncmedia.SMEventsListener;
 import com.acr.utils.SMException;
+import com.testfairy.TestFairy;
 
 import java.util.UUID;
 
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements SMEventsListener 
 
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
 
-    private static final String ACCESS_KEY = "test_key";
+    private static final String ACCESS_KEY = "test_project";
     private static final String ACCESS_SECRET = "1a4f7ad7-0f79-4544-bcd7-d3409ca1f3b3";
 
     private static String[] PERMISSIONS_STORAGE = {
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements SMEventsListener 
                             .setAutoStart(true)
                             .makeClient();
         } catch (SMException e) {
-            e.printStackTrace();
+            TestFairy.logThrowable(e);
         }
     }
 
