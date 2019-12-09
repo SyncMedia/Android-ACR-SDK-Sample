@@ -11,14 +11,14 @@
         android:id="@+id/start"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="@string/start" />
+        android:text="@string/start"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/cancel"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textAllCaps="false"
-        android:text="@string/stop" />
+        android:text="@string/stop"
+        android:textAllCaps="false" />
 </LinearLayout>

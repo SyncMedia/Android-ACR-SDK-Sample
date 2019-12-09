@@ -12,6 +12,7 @@ import com.acr.syncmedia.SMClient;
 import com.acr.syncmedia.SMConfig;
 import com.acr.syncmedia.SMEventsListener;
 import com.acr.utils.SMException;
+import com.syncmedia.audiodemo.R;
 import com.testfairy.TestFairy;
 
 import java.util.UUID;

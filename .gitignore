@@ -1,5 +1,5 @@
 *.iml
-android_sync_sdk/*
+build/
 app/libs/android_sync_sdk_*
 .idea/
 .gradle
