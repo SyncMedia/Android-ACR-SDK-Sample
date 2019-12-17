@@ -18,7 +18,7 @@ This is used to process audio via microphone for event recognition.
 
 __Version__
 
-VERSION :: `1.0.5`
+VERSION :: `1.0.4`
 
 __Download lib__
 
