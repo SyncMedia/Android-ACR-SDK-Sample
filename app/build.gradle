@@ -18,8 +18,6 @@ android {
         versionName "1.0"
 
         ndk {
-            // Tells Gradle to build outputs for the following ABIs and package
-            // them into your APK.
             abiFilters 'x86', 'x86_64', 'armeabi', 'arm64-v8a', 'armeabi-v7a'
         }
     }
