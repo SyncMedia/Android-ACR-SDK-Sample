@@ -14,19 +14,11 @@ This is used to process audio via microphone for event recognition.
 * Manifest.permission.RECORD_AUDIO
 ```
 
-These store events in local database till they are synced to our server.
-
-```
-* Manifest.permission.READ_EXTERNAL_STORAGE
-* Manifest.permission.WRITE_EXTERNAL_STORAGE
-```
-
-
 ### Installation
 
 __Version__
 
-VERSION :: `1.0.3`
+VERSION :: `1.0.5`
 
 __Download lib__
 

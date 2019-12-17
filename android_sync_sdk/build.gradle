@@ -1,2 +1,2 @@
 configurations.maybeCreate("default")
-artifacts.add("default", file('android_sync_sdk_1.0.3.aar'))
+artifacts.add("default", file('android_sync_sdk_1.0.5.aar'))

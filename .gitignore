@@ -1,6 +1,7 @@
 *.iml
 app/development/
 build/
+android_sync_sdk/*.aar
 app/libs/android_sync_sdk_*
 .idea/
 .gradle
