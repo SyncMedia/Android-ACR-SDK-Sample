@@ -3,6 +3,7 @@ package com.syncmedia.acr.demo;
 import android.Manifest;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import androidx.core.app.ActivityCompat;
 import com.acr.syncmedia.SMClient;
 import com.acr.syncmedia.SMConfig;
 import com.acr.syncmedia.SMEventsListener;
+import com.acr.syncmedia.SMState;
 import com.acr.utils.SMException;
 import com.syncmedia.audiodemo.R;
 import com.testfairy.TestFairy;
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements SMEventsListener 
 
     private static final String ACCESS_KEY = "test_project";
     private static final String ACCESS_SECRET = "e2c0e8e2-23b1-4477-8a2b-7d7e16fd95d8";
+
+    private static final boolean AUTO_START = Boolean.parseBoolean("false");
 
     private static String[] PERMISSIONS_STORAGE = {
             Manifest.permission.RECORD_AUDIO
@@ -74,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements SMEventsListener 
                             .setIdentifier(UUID.randomUUID().toString())
                             .setContext(this)
                             .setListener(this)
-                            .setAutoStart(true)
+                            .setAutoStart(AUTO_START)
                             .makeClient();
         } catch (SMException e) {
             TestFairy.logThrowable(e);
@@ -97,6 +101,16 @@ public class MainActivity extends AppCompatActivity implements SMEventsListener 
 
     @Override
     public void onSMReady(@NonNull SMClient client) {
+        //SMClient is now ready.
         Log.d(TAG, "onSMReady: client: start: " + client.getState());
+
+        if (!AUTO_START) {
+            boolean status = client.start();
+            Log.d(TAG, "client is started: " + status);
+        }
+
+        if (SMState.listening.equals(client.getState())) {
+            Toast.makeText(this, "client is listening", Toast.LENGTH_LONG).show();
+        }
     }
 }
