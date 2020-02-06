@@ -1,9 +1,8 @@
-package com.syncmedia.acr.demo;
+package com.syncmedia.sdk.demo;
 
 import android.Manifest;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,17 +10,14 @@ import androidx.core.app.ActivityCompat;
 
 import com.acr.syncmedia.SMClient;
 import com.acr.syncmedia.SMConfig;
-import com.acr.syncmedia.SMEventsListener;
-import com.acr.syncmedia.SMState;
 import com.acr.utils.SMException;
-import com.syncmedia.audiodemo.R;
-import com.testfairy.TestFairy;
+import com.acr.utils.SMLogger;
 
 import java.util.UUID;
 
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
-public class MainActivity extends AppCompatActivity implements SMEventsListener {
+public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
@@ -77,11 +73,9 @@ public class MainActivity extends AppCompatActivity implements SMEventsListener 
                             .setCredentials(ACCESS_KEY, ACCESS_SECRET)
                             .setIdentifier(UUID.randomUUID().toString())
                             .setContext(this)
-                            .setListener(this)
-                            .setAutoStart(AUTO_START)
-                            .makeClient();
+                            .build();
         } catch (SMException e) {
-            TestFairy.logThrowable(e);
+            SMLogger.e(TAG, "startClient", e);
         }
     }
 
@@ -97,20 +91,5 @@ public class MainActivity extends AppCompatActivity implements SMEventsListener 
         super.onDestroy();
         Log.e("MainActivity", "release");
         cancel();
-    }
-
-    @Override
-    public void onSMReady(@NonNull SMClient client) {
-        //SMClient is now ready.
-        Log.d(TAG, "onSMReady: client: start: " + client.getState());
-
-        if (!AUTO_START) {
-            boolean status = client.start();
-            Log.d(TAG, "client is started: " + status);
-        }
-
-        if (SMState.listening.equals(client.getState())) {
-            Toast.makeText(this, "client is listening", Toast.LENGTH_LONG).show();
-        }
     }
 }
