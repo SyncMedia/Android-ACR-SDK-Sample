@@ -1,21 +1,15 @@
 apply plugin: 'com.android.application'
 
-static def getGitVersion() {
-    def cmd = "git describe --tag --abbrev=0"
-    def proc = cmd.execute()
-    return proc.text.trim()
-}
-
 android {
+
     compileSdkVersion 29
-    buildToolsVersion "29.0.2"
 
     defaultConfig {
         applicationId "com.syncmedia.audiodemo"
         minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
-        versionName "1.0"
+        versionName "1.1.0"
 
         ndk {
             abiFilters 'x86', 'x86_64', 'armeabi', 'arm64-v8a', 'armeabi-v7a'
@@ -36,7 +30,6 @@ android {
         }
 
         debug {
-            ext.enableCrashlytics = false
             minifyEnabled false
             debuggable true
         }
@@ -47,12 +40,10 @@ android {
     productFlavors {
         development {
             dimension "default"
-            versionName getGitVersion() + "-SNAPSHOT"
         }
 
         production {
             dimension "default"
-            versionName getGitVersion()
         }
     }
 
