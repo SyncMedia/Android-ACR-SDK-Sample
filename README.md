@@ -4,7 +4,7 @@
 
 __Access Keys__
 
-Get `ACCESS_KEY` and `ACCESS_SECRET` from dashboard.
+Get `ACCESS_KEY` and `ACCESS_SECRET` from dashboard [https://cms.syncmedia.io/cms/sdk/setup](https://cms.syncmedia.io/cms/sdk/setup)
 
 __App Permissions__
 
