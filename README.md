@@ -20,10 +20,10 @@ __Download lib__
 
 
 ```
-wget https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.1.0.aar
+wget https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.2.0.aar
 ```
 
-Add `android_sync_sdk_1.1.0.aar` as a `module dependency` named: `android_sync_sdk`
+Add `android_sync_sdk_1.2.0.aar` as a `module dependency` named: `android_sync_sdk`
 
 Add app dependencies to your main module
 
