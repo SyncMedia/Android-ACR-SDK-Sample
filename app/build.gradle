@@ -8,8 +8,8 @@ android {
         applicationId "com.syncmedia.audiodemo"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.1.0"
+        versionCode 2
+        versionName "1.2.0"
 
         ndk {
             abiFilters 'x86', 'x86_64', 'armeabi', 'arm64-v8a', 'armeabi-v7a'
