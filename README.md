@@ -19,11 +19,15 @@ This is used to process audio via microphone for event recognition.
 __Download lib__
 
 
+Current `$VERSION`  :: `1.3.0`
+
+Download
+
 ```
-wget https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.2.0.aar
+wget https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_$VERSION.aar
 ```
 
-Add `android_sync_sdk_1.2.0.aar` as a `module dependency` named: `android_sync_sdk`
+Add `android_sync_sdk_$VERSION.aar` as a `module dependency` named: `android_sync_sdk`
 
 Add app dependencies to your main module
 

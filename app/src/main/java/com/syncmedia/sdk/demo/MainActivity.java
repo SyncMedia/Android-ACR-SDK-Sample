@@ -23,14 +23,12 @@ public class MainActivity extends AppCompatActivity {
 
     private SMClient mClient;
 
-    private static final int REQUEST_EXTERNAL_STORAGE = 1;
+    private static final int REQUEST_PERMISSION_CODE = 1;
 
     private static final String ACCESS_KEY = "test_project";
     private static final String ACCESS_SECRET = "e2c0e8e2-23b1-4477-8a2b-7d7e16fd95d8";
 
-    private static final boolean AUTO_START = Boolean.parseBoolean("false");
-
-    private static String[] PERMISSIONS_STORAGE = {
+    private static String[] PERMISSIONS_ARRAY = {
             Manifest.permission.RECORD_AUDIO
     };
 
@@ -38,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         findViewById(R.id.start).setOnClickListener(v -> checkAndStart());
         findViewById(R.id.cancel).setOnClickListener(v -> cancel());
@@ -57,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkAndStart() {
-        ActivityCompat.requestPermissions(this, PERMISSIONS_STORAGE,
-                REQUEST_EXTERNAL_STORAGE);
+        ActivityCompat.requestPermissions(this, PERMISSIONS_ARRAY,
+                REQUEST_PERMISSION_CODE);
 
     }
 
