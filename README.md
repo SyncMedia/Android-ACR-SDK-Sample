@@ -21,8 +21,6 @@ __Download lib__
 
 Check [`Versions`](https://code.syncmedia.io/external/android_offline_creative_demo#versions) for current version.
 
-Download
-
 ```
 wget https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_$VERSION.aar
 ```
