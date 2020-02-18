@@ -62,10 +62,11 @@ smClient.release();
 
 #### Current
 
-* [android\_sync\_sdk\_1.3.0.aar](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.3.0.aar)
+* [android\_sync\_sdk\_1.3.3.aar](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.3.3.aar)
 
 #### Previous
 
+* [android\_sync\_sdk\_1.3.0.aar](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.3.0.aar)
 * [android\_sync\_sdk\_1.2.0.aar](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.2.0.aar)
 * [android\_sync\_sdk\_1.0.0.aar](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.0.0.aar)
 

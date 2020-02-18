@@ -10,6 +10,8 @@ import androidx.core.app.ActivityCompat;
 
 import com.acr.syncmedia.SMClient;
 import com.acr.syncmedia.SMConfig;
+import com.acr.syncmedia.SMEventsListener;
+import com.acr.syncmedia.SMState;
 import com.acr.utils.SMException;
 import com.acr.utils.SMLogger;
 
@@ -24,9 +26,6 @@ public class MainActivity extends AppCompatActivity {
     private SMClient mClient;
 
     private static final int REQUEST_PERMISSION_CODE = 1;
-
-    private static final String ACCESS_KEY = "test_project";
-    private static final String ACCESS_SECRET = "e2c0e8e2-23b1-4477-8a2b-7d7e16fd95d8";
 
     private static String[] PERMISSIONS_ARRAY = {
             Manifest.permission.RECORD_AUDIO
@@ -67,9 +66,16 @@ public class MainActivity extends AppCompatActivity {
         try {
             this.mClient =
                     new SMConfig.Builder()
-                            .setCredentials(ACCESS_KEY, ACCESS_SECRET)
+                            .setCredentials(getString(R.string.access_key), getString(R.string.access_secret))
                             .setIdentifier(UUID.randomUUID().toString())
                             .setContext(this)
+                            .setListener(new SMEventsListener() {
+                                @Override
+                                public void onSMStateChanged(@NonNull SMClient client, @SMState String state) {
+                                    Log.d(TAG, "onSMStateChanged: " + state);
+                                }
+                            })
+                            .setLogger(new SMLogger(true))
                             .build();
         } catch (SMException e) {
             SMLogger.e(TAG, "startClient", e);

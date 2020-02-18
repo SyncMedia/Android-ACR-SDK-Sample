@@ -2,4 +2,6 @@
     <string name="app_name">Audio Demo</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
+    <string name="access_key">tabrez.different_creatives</string>
+    <string name="access_secret">78f068888b2d466b83e9</string>
 </resources>
