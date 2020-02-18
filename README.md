@@ -48,7 +48,14 @@ __Start Listener__
 SMClient smClient = new SMConfig.Builder()
 	.setCredentials("ACCESS_KEY", "ACCESS_SECRET")
 	.setIdentifier("DEVICE_IDENTIFIER")
-	.setContext(this)
+	.setContext(ApplicationContext.this)
+	.setListener(new SMEventsListener() {
+        @Override
+        public void onSMStateChanged(@NonNull SMClient client, @SMState String state) {
+            Log.d(TAG, "onSMStateChanged: " + state);
+        }
+    })
+    .setLogger(new SMLogger(true))
 	.build();
 ```
 
