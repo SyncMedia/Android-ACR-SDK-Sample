@@ -3,6 +3,7 @@ package com.syncmedia.sdk.demo;
 import android.Manifest;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,13 +32,15 @@ public class MainActivity extends AppCompatActivity {
             Manifest.permission.RECORD_AUDIO
     };
 
+    private TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.start).setOnClickListener(v -> checkAndStart());
-        findViewById(R.id.cancel).setOnClickListener(v -> cancel());
+        textView = findViewById(R.id.startStpBtn);
+        textView.setOnClickListener(v -> toggleStartStop());
     }
 
     @Override
@@ -52,13 +55,18 @@ public class MainActivity extends AppCompatActivity {
         startClient();
     }
 
-    private void checkAndStart() {
-        ActivityCompat.requestPermissions(this, PERMISSIONS_ARRAY,
-                REQUEST_PERMISSION_CODE);
-
+    private void toggleStartStop() {
+        if (mClient == null) {
+            ActivityCompat.requestPermissions(this, PERMISSIONS_ARRAY,
+                    REQUEST_PERMISSION_CODE);
+        } else {
+            cancel();
+        }
     }
 
     private void startClient() {
+        textView.setText(R.string.stop);
+
         if (this.mClient != null) {
             return;
         }
@@ -87,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
             this.mClient.release();
             this.mClient = null;
         }
+
+        textView.setText(R.string.start);
     }
 
     @Override
