@@ -65,7 +65,7 @@ smClient.release();
 
 #### Current
 
-* [SDK v1.4.1](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android-sdk/sdk_1.4.1.aar)
+* [SDK v1.4.1](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android-sdk/sdk_v1.4.1.aar)
 
 #### Deprecated
 
