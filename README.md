@@ -16,14 +16,10 @@ This is used to process audio via microphone for event recognition.
 
 ### Installation
 
-__Download lib__
+__Integration__
 
 
-* Check [`Versions`](https://code.syncmedia.io/external/android_offline_creative_demo#versions) for current version.
-
-```
-wget https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android-sdk/sdk_$VERSION.aar
-```
+* Download SDK Version from [`SDK Versions`](https://code.syncmedia.io/external/android_offline_creative_demo#versions)
 
 * Add downloaded aar file as a `module dependency` named: `android_sync_sdk`
 
