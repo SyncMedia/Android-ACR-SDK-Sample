@@ -19,15 +19,15 @@ This is used to process audio via microphone for event recognition.
 __Download lib__
 
 
-Check [`Versions`](https://code.syncmedia.io/external/android_offline_creative_demo#versions) for current version.
+* Check [`Versions`](https://code.syncmedia.io/external/android_offline_creative_demo#versions) for current version.
 
 ```
-wget https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_$VERSION.aar
+wget https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android-sdk/sdk_$VERSION.aar
 ```
 
-Add `android_sync_sdk_$VERSION.aar` as a `module dependency` named: `android_sync_sdk`
+* Add downloaded aar file as a `module dependency` named: `android_sync_sdk`
 
-Add app dependencies to your main module
+* Add app dependencies to your main module
 
 ```
 dependencies {
@@ -35,8 +35,8 @@ dependencies {
     implementation project(':android_sync_sdk') //sub module
      
     implementation 'com.getkeepsafe.relinker:relinker:1.3.1'
-    implementation "androidx.room:room-runtime:2.2.3"
-    annotationProcessor "androidx.room:room-compiler:2.2.3"
+    implementation "androidx.room:room-runtime:2.2.4"
+    annotationProcessor "androidx.room:room-compiler:2.2.4"
     
 	//... other dependencies
 }
@@ -69,13 +69,14 @@ smClient.release();
 
 #### Current
 
-* [android\_sync\_sdk\_1.3.4.aar](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.3.4.aar)
+* [SDK v1.4.1](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android-sdk/sdk_1.4.1.aar)
 
-#### Previous
+#### Deprecated
 
-* [android\_sync\_sdk\_1.3.0.aar](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.3.0.aar)
-* [android\_sync\_sdk\_1.2.0.aar](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.2.0.aar)
-* [android\_sync\_sdk\_1.0.0.aar](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.0.0.aar)
+* [SDK v1.3.4](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.3.4.aar)
+* [SDK v1.3.0](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.3.0.aar)
+* [SDK v1.2.0](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.2.0.aar)
+* [SDK v1.0.0](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.0.0.aar)
 
 ### Contributors
 
