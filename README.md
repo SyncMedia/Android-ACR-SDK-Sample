@@ -29,9 +29,9 @@ dependencies {
      //sdk dependencies
     implementation project(':android_sync_sdk') //sub module
      
-    implementation 'com.getkeepsafe.relinker:relinker:1.3.1'
-    implementation "androidx.room:room-runtime:2.2.4"
-    annotationProcessor "androidx.room:room-compiler:2.2.4"
+    implementation 'com.getkeepsafe.relinker:relinker:1.4.3'    // allows loading of sdk so lib
+    implementation "androidx.room:room-runtime:2.2.6"           // used for storing data offline
+    annotationProcessor "androidx.room:room-compiler:2.2.6"
     
 	//... other dependencies
 }
@@ -62,20 +62,17 @@ smClient.release();
 
 ### Versions
 
-#### Alpha
+#### Current
 
 * [SDK v1.5.1](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android-sdk/sdk_v1.5.1.aar)
 
-#### Current
-
-* [SDK v1.4.1](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android-sdk/sdk_v1.4.1.aar)
-
 #### Deprecated
 
-* [SDK v1.3.4](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.3.4.aar)
-* [SDK v1.3.0](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.3.0.aar)
-* [SDK v1.2.0](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.2.0.aar)
-* [SDK v1.0.0](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android_sync_sdk_1.0.0.aar)
+* [SDK v1.4.1](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android-sdk/sdk_v1.4.1.aar)
+* [SDK v1.3.4](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android-sdk/android_sync_sdk_1.3.4.aar)
+* [SDK v1.3.0](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android-sdk/android_sync_sdk_1.3.0.aar)
+* [SDK v1.2.0](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android-sdk/android_sync_sdk_1.2.0.aar)
+* [SDK v1.0.0](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android-sdk/android_sync_sdk_1.0.0.aar)
 
 ### Contributors
 
