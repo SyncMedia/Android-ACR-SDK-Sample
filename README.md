@@ -18,7 +18,6 @@ This is used to process audio via microphone for event recognition.
 
 __Integration__
 
-
 * Download SDK Version from [`SDK Versions`](https://code.syncmedia.io/external/android_offline_creative_demo#versions)
 
 * Add downloaded aar file as a `module dependency` named: `android_sync_sdk`
@@ -62,6 +61,10 @@ smClient.release();
 ```
 
 ### Versions
+
+#### Alpha
+
+* [SDK v1.5.1](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android-sdk/sdk_v1.5.1.aar)
 
 #### Current
 
