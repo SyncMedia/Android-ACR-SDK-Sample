@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.syncmedia.audiodemo"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 30
         versionCode 6
         versionName "1.3.4"
