@@ -60,6 +60,13 @@ __Stop Listener__
 smClient.release();
 ```
 
+### Proguard
+
+```
+-keep class com.acr.rec.engine.** { *; }
+-keepclassmembers class com.acr.*
+```
+
 ### Versions
 
 #### Current
