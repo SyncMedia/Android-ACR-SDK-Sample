@@ -16,6 +16,18 @@ android {
         }
     }
 
+    signingConfigs {
+        release {
+            storeFile file("../keystore/release.keystore")
+            storePassword "sync-media-demo-app"
+            keyAlias "sync-media-demo-app"
+            keyPassword "sync-media-demo-app"
+
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
     lintOptions {
         checkReleaseBuilds true
         abortOnError false
@@ -23,10 +35,15 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
-            debuggable false
-            jniDebuggable false
+            debuggable true
+            jniDebuggable true
+
             zipAlignEnabled true
+            minifyEnabled true
+            shrinkResources true
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
 
         debug {
@@ -38,7 +55,7 @@ android {
     flavorDimensions "default"
 
     productFlavors {
-        development {
+        staging {
             dimension "default"
         }
 

@@ -1,6 +1,7 @@
 package com.syncmedia.sdk.demo;
 
 import android.Manifest;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -15,6 +16,7 @@ import com.acr.syncmedia.SMEventsListener;
 import com.acr.syncmedia.SMState;
 import com.acr.utils.SMException;
 import com.acr.utils.SMLogger;
+import com.acr.utils.SMMetaData;
 
 import java.util.UUID;
 
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_PERMISSION_CODE = 1;
 
-    private static String[] PERMISSIONS_ARRAY = {
+    private static final String[] PERMISSIONS_ARRAY = {
             Manifest.permission.RECORD_AUDIO
     };
 
@@ -67,12 +69,12 @@ public class MainActivity extends AppCompatActivity {
     private void startClient() {
         textView.setText(R.string.stop);
 
-        if (this.mClient != null) {
+        if (mClient != null) {
             return;
         }
 
         try {
-            this.mClient =
+            mClient =
                     new SMConfig.Builder()
                             .setCredentials(getString(R.string.access_key), getString(R.string.access_secret))
                             .setIdentifier(UUID.randomUUID().toString())
@@ -88,6 +90,19 @@ public class MainActivity extends AppCompatActivity {
         } catch (SMException e) {
             SMLogger.e(TAG, "startClient", e);
         }
+
+        mClient.setMetaData(new SMMetaData.Builder()
+                .putNestedMeta("location",
+                        new SMMetaData.Builder()
+                                .putVal("latitude", "latitude")
+                                .putVal("longitude", "longitude"))
+                .putNestedMeta("device",
+                        new SMMetaData.Builder()
+                                .putVal("brand", android.os.Build.MANUFACTURER)
+                                .putVal("model", android.os.Build.MODEL)
+                                .putVal("product", android.os.Build.PRODUCT)
+                                .putVal("os", android.os.Build.VERSION.SDK_INT))
+                .build());
     }
 
     protected void cancel() {
