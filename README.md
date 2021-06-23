@@ -68,7 +68,9 @@ This value can be set anytime as needed by client application.
 Below is a sample code to set it.
 
 ```
-mClient.setMetaData(new SMMetaData.Builder()
+SMMetaData metadata = new SMMetaData.Builder()
+                .putVal("version", BuildConfig.VERSION_NAME)
+                .putVal("utc_timestamp", System.currentTimeMillis())
                 .putNestedMeta("location",
                         new SMMetaData.Builder()
                                 .putVal("latitude", "latitude")
@@ -79,7 +81,9 @@ mClient.setMetaData(new SMMetaData.Builder()
                                 .putVal("model", android.os.Build.MODEL)
                                 .putVal("product", android.os.Build.PRODUCT)
                                 .putVal("os", android.os.Build.VERSION.SDK_INT))
-                .build());
+                .build();
+
+mClient.setMetaData(metadata);
 ```
 
 ### Proguard

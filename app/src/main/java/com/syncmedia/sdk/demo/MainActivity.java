@@ -92,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         mClient.setMetaData(new SMMetaData.Builder()
+                .putVal("version", BuildConfig.VERSION_NAME)
+                .putVal("utc_timestamp", System.currentTimeMillis())
                 .putNestedMeta("location",
                         new SMMetaData.Builder()
                                 .putVal("latitude", "latitude")
