@@ -60,6 +60,28 @@ __Stop Listener__
 smClient.release();
 ```
 
+#### Metadata
+
+`smclient` supports optional metadata. This is a json encoded key-value pair dictionary.
+This value can be set anytime as needed by client application.
+
+Below is a sample code to set it.
+
+```
+mClient.setMetaData(new SMMetaData.Builder()
+                .putNestedMeta("location",
+                        new SMMetaData.Builder()
+                                .putVal("latitude", "latitude")
+                                .putVal("longitude", "longitude"))
+                .putNestedMeta("device",
+                        new SMMetaData.Builder()
+                                .putVal("brand", android.os.Build.MANUFACTURER)
+                                .putVal("model", android.os.Build.MODEL)
+                                .putVal("product", android.os.Build.PRODUCT)
+                                .putVal("os", android.os.Build.VERSION.SDK_INT))
+                .build());
+```
+
 ### Proguard
 
 ```
