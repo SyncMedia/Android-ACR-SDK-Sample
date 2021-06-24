@@ -74,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+        int deliveryType = ResultDeliveryType.both;
+
         try {
             mClient =
                     new SMConfig.Builder()

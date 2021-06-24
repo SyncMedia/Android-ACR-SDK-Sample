@@ -40,11 +40,17 @@ dependencies {
 __Start Listener__
 
 ```
+int deliveryType = ResultDeliveryType.both;     // results on callback url & local onResult(String acrId, long eventTs) callback
+int deliveryType = ResultDeliveryType.local;    // results on local onResult(String acrId, long eventTs) callback only
+int deliveryType = ResultDeliveryType.callback; // results on callback url only
+```
+
+```
 SMClient smClient = new SMConfig.Builder()
 	.setCredentials("ACCESS_KEY", "ACCESS_SECRET")
 	.setIdentifier("DEVICE_IDENTIFIER")
 	.setContext(ApplicationContext.this)
-	.setResultDeliveryType(ResultDeliveryType.both) //set to both callback & local
+	.setResultDeliveryType(deliveryType) //set to both callback & local
 	.setListener(new SMEventsListener() {
         @Override
         public void onSMStateChanged(@NonNull SMClient client, @SMState String state) {
