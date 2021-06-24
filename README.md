@@ -44,10 +44,18 @@ SMClient smClient = new SMConfig.Builder()
 	.setCredentials("ACCESS_KEY", "ACCESS_SECRET")
 	.setIdentifier("DEVICE_IDENTIFIER")
 	.setContext(ApplicationContext.this)
+	.setResultDeliveryType(ResultDeliveryType.both) //set to both callback & local
 	.setListener(new SMEventsListener() {
         @Override
         public void onSMStateChanged(@NonNull SMClient client, @SMState String state) {
             Log.d(TAG, "onSMStateChanged: " + state);
+        }
+
+        @Override
+        public void onResult(String acrId, long eventTs) {
+            //local callback
+            super.onResult(acrId, eventTs);
+            Log.d(TAG, "onResult: " + acrId + ", eventTs: " + eventTs);
         }
     })
     .setLogger(new SMLogger(true))

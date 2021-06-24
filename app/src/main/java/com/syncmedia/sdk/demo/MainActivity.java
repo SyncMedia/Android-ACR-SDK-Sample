@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.acr.syncmedia.ResultDeliveryType;
 import com.acr.syncmedia.SMClient;
 import com.acr.syncmedia.SMConfig;
 import com.acr.syncmedia.SMEventsListener;
@@ -79,10 +80,17 @@ public class MainActivity extends AppCompatActivity {
                             .setCredentials(getString(R.string.access_key), getString(R.string.access_secret))
                             .setIdentifier(UUID.randomUUID().toString())
                             .setContext(this)
+                            .setResultDeliveryType(ResultDeliveryType.both) //set to both callback & local
                             .setListener(new SMEventsListener() {
                                 @Override
                                 public void onSMStateChanged(@NonNull SMClient client, @SMState String state) {
                                     Log.d(TAG, "onSMStateChanged: " + state);
+                                }
+
+                                @Override
+                                public void onResult(String acrId, long eventTs) {
+                                    super.onResult(acrId, eventTs);
+                                    Log.d(TAG, "onResult: " + acrId + ", eventTs: " + eventTs);
                                 }
                             })
                             .setLogger(new SMLogger(true))
