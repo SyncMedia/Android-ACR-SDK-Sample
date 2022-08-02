@@ -111,10 +111,11 @@ mClient.setMetaData(metadata);
 
 #### Current
 
-* [SDK v1.5.1](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android-sdk/sdk_v1.5.1.aar)
+* [SDK v1.5.2](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android-sdk/sdk_v1.5.2.aar)
 
 #### Deprecated
 
+* [SDK v1.5.1](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android-sdk/sdk_v1.5.1.aar)
 * [SDK v1.4.1](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android-sdk/sdk_v1.4.1.aar)
 * [SDK v1.3.4](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android-sdk/android_sync_sdk_1.3.4.aar)
 * [SDK v1.3.0](https://dev-sync-media.s3-ap-southeast-1.amazonaws.com/libs/android-sdk/android_sync_sdk_1.3.0.aar)
